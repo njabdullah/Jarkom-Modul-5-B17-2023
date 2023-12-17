@@ -51,6 +51,11 @@ Lalu, lakukan testing di client (saya run di GrabeForest) dengan mengubah tangga
 
     nmap 10.17.8.2
     nmap 10.17.14.138
+    
+![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/fe2c1899-d423-4b60-82b8-e545d2468d6c)
+![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/cd8c6bb9-eb58-440e-97d9-9e391b80866b)
+
+Pada hari Senin, 18 Desember 2023 pukul 12.30 muncul filterred
 
 ## **Soal Nomor 7**
 Karena terdapat 2 WebServer, kalian diminta agar setiap client yang mengakses Sein dengan Port 80 akan didistribusikan secara bergantian pada Sein dan Stark secara berurutan dan request dari client yang mengakses Stark dengan port 443 akan didistribusikan secara bergantian pada Sein dan Stark secara berurutan.
@@ -80,7 +85,9 @@ Lalu, di client GrabeForest, jalankan
 
     nc 10.17.8.2 80
     nc 10.17.14.138 80
-    
+
+![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/47ec18f3-e281-4a82-a8b2-9dd087187d11)
+
 ## **Soal Nomor 8**
 Karena berbeda koalisi politik, maka subnet dengan masyarakat yang berada pada Revolte dilarang keras mengakses WebServer hingga masa pencoblosan pemilu kepala suku 2024 berakhir. Masa pemilu (hingga pemungutan dan penghitungan suara selesai) kepala suku bersamaan dengan masa pemilu Presiden dan Wakil Presiden Indonesia 2024.
 
@@ -93,6 +100,12 @@ Lalu, lakukan testing di Revolte dengan mengganti date teerlebih dahulu dan mema
 
     nmap 10.17.8.2 80
     nmap 10.17.14.138 80
+
+Jika disetting pada masa pemilu
+![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/95f16b34-e42c-4f0c-91f9-4776865883ec)
+
+Jika disetting di luar masa pemilu
+![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/5d643213-5ebe-4ef4-9e1e-63920c05cb2a)
 
 ## **Soal Nomor 9**
 Sadar akan adanya potensial saling serang antar kubu politik, maka WebServer harus dapat secara otomatis memblokir  alamat IP yang melakukan scanning port dalam jumlah banyak (maksimal 20 scan port) di dalam selang waktu 10 menit (clue: test dengan nmap).
@@ -115,11 +128,16 @@ Lalu, lakukan setting dengan menjalankan syntax berikut di GrobeForest
     ping 10.17.8.2
     ping 10.17.14.138
 
+![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/0c046779-d1c3-4ab0-ab66-c20478f24bdd)
+![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/d79b514f-cc9f-46bf-92db-2e3bcb208610)
+
 ## **Soal Nomor 10**
 Karena kepala suku ingin tau paket apa saja yang di-drop, maka di setiap node server dan router ditambahkan logging paket yang di-drop dengan standard syslog level. 
 
+## **Penyelesaian Soal Nomor 10**
 Masukkan syntax berikut ke setiap node server (DNS, DHCP, Web) dan setiap router
 
     iptables -A INPUT  -j LOG --log-level debug --log-prefix 'Dropped Packet' -m limit --limit 1/second --limit-burst 10
 
-## **Penyelesaian Soal Nomor 10**
+![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/2deb8908-f00a-4f6b-a1c9-cedcab106800)
+
