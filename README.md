@@ -73,7 +73,7 @@ Pembagian IP setiap node
 |        | Revolte   | eth0  | 10.17.14.150  |               | 10.17.14.149 |
 
 ---
-Configurasi Setiap Node
+Configurasi Setiap Node<br>
 Aura
     
     auto eth0
