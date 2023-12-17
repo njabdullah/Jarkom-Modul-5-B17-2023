@@ -27,7 +27,8 @@ Rute dalam penentuan subnetting
 | A10                 | Fern-Switch3-Revolte                    | 2          | /30     |
 | Total               |                                         | 1871       |         |
 
-Perhitungan dengan VLSM
+Perhitungan dengan VLSM (dalam bentuk tree)
+
 ![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/9b51cf1f-1fd4-4946-8b1b-29bfa47a3685)
 
 Pembagian NID, Netmask, dan Broadcast
@@ -43,6 +44,33 @@ Pembagian NID, Netmask, dan Broadcast
 | A8     | 10.17.14.0 | 255.255.255.128 | 10.17.14.127 | /25     |
 | A9     | 10.17.14.144 | 255.255.255.252 | 10.17.14.147 | /30     |
 | A10    | 10.17.14.148 | 255.255.255.252 | 10.17.14.151 | /30     |
+
+Pembagian IP setiap node
+
+| Subnet | Node      | Eth   | IP            | Netmask       | Gateway      |
+|--------|-----------|-------|---------------|---------------|--------------|
+| A1     | Aura      | eth1  | 10.17.14.129  | 255.255.255.252 |              |
+|        | Heiter    | eth0  | 10.17.14.130  |               | 10.17.14.129 |
+| A2     | Heiter    | eth1  | 10.17.0.1     | 255.255.248.0 |              |
+|        | TurkRegion| eth0  | 10.17.0.2     |               | 10.17.0.1    |
+| A3     | Heiter    | eth2  | 10.17.8.1     | 255.255.252.0 |              |
+|        | GrobeForest| eth0 | 10.17.8.3     |               | 10.17.8.1    |
+|        | Sein      | eth0  | 10.17.8.2     |               | 10.17.8.1    |
+| A4     | Aura      | eth2  | 10.17.14.133  | 255.255.255.252 |              |
+|        | Frieren   | eth0  | 10.17.14.134  |               | 10.17.14.133 |
+| A5     | Frieren   | eth2  | 10.17.14.137  | 255.255.255.252 |              |
+|        | Stark     | eth0  | 10.17.14.138  |               | 10.17.14.137 |
+| A6     | Frieren   | eth1  | 10.17.14.141  | 255.255.255.252 |              |
+|        | Himmel    | eth0  | 10.17.14.142  |               | 10.17.14.141 |
+| A7     | Himmel    | eth1  | 10.17.12.1    | 255.255.254.0 |              |
+|        | LaubHills | eth0  | 10.17.12.2    |               | 10.17.12.1   |
+| A8     | Himmel    | eth2  | 10.17.14.1    | 255.255.255.128 |             |
+|        | SchwerMountains| eth0 | 10.17.14.3 |               | 10.17.14.1   |
+|        | Fern      | eth0  | 10.17.14.2    |               | 10.17.14.1   |
+| A9     | Fern      | eth1  | 10.17.14.145  | 255.255.255.252 |             |
+|        | Richter   | eth0  | 10.17.14.146  |               | 10.17.14.145 |
+| A10    | Fern      | eth2  | 10.17.14.149  | 255.255.255.252 |             |
+|        | Revolte   | eth0  | 10.17.14.150  |               | 10.17.14.149 |
 
 ## **Soal Nomor 1**
 Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Aura menggunakan iptables, tetapi tidak ingin menggunakan MASQUERADE.
