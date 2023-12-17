@@ -6,11 +6,15 @@
 | Abdullah Nasih Jasir       | 5025211111 |
 | Yohanes Teguh Ukur Ginting | 5025211179 |
 
+---
+
 ## **Soal Nomor 0**
 Setelah pandai mengatur jalur-jalur khusus, kalian diminta untuk membantu North Area menjaga wilayah mereka dan kalian dengan senang hati membantunya karena ini merupakan tugas terakhir.
 
 Topology beserta subnet
 ![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/f72fe981-0e03-45af-983e-40e947c006e2)
+
+---
 
 Rute dalam penentuan subnetting
 | Nama Subnet         | Rute                                    | Jumlah IP | Netmask |
@@ -27,9 +31,13 @@ Rute dalam penentuan subnetting
 | A10                 | Fern-Switch3-Revolte                    | 2          | /30     |
 | Total               |                                         | 1871       |         |
 
+---
+
 Perhitungan dengan VLSM (dalam bentuk tree)
 
 ![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/9b51cf1f-1fd4-4946-8b1b-29bfa47a3685)
+
+---
 
 Pembagian NID, Netmask, dan Broadcast
 | Subnet | Network ID | Netmask       | Broadcast    | Netmask |
@@ -44,6 +52,8 @@ Pembagian NID, Netmask, dan Broadcast
 | A8     | 10.17.14.0 | 255.255.255.128 | 10.17.14.127 | /25     |
 | A9     | 10.17.14.144 | 255.255.255.252 | 10.17.14.147 | /30     |
 | A10    | 10.17.14.148 | 255.255.255.252 | 10.17.14.151 | /30     |
+
+---
 
 Pembagian IP setiap node
 
@@ -213,30 +223,42 @@ Revolte
     	netmask 255.255.255.252
         gateway 10.17.14.149
 
+---
+
 ## **Soal Nomor 1**
 Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Aura menggunakan iptables, tetapi tidak ingin menggunakan MASQUERADE.
 
 ## **Penyelesaian Nomor 1**
+
+---
 
 ## **Soal Nomor 2**
 Kalian diminta untuk melakukan drop semua TCP dan UDP kecuali port 8080 pada TCP.
 
 ## **Penyelesaian Nomor 2**
 
+---
+
 ## **Soal Nomor 3**
 Kepala Suku North Area meminta kalian untuk membatasi DHCP dan DNS Server hanya dapat dilakukan ping oleh maksimal 3 device secara bersamaan, selebihnya akan di drop.
 
 ## **Penyelesaian Nomor 3**
+
+---
 
 ## **Soal Nomor 4**
 Lakukan pembatasan sehingga koneksi SSH pada Web Server hanya dapat dilakukan oleh masyarakat yang berada pada GrobeForest.
 
 ## **Penyelesaian Nomor 4**
 
+---
+
 ## **Soal Nomor 5**
 Selain itu, akses menuju WebServer hanya diperbolehkan saat jam kerja yaitu Senin-Jumat pada pukul 08.00-16.00.
 
 ## **Penyelesaian Nomor 5**
+
+---
 
 ## **Soal Nomor 6**
 Lalu, karena ternyata terdapat beberapa waktu di mana network administrator dari WebServer tidak bisa stand by, sehingga perlu ditambahkan rule bahwa akses pada hari Senin - Kamis pada jam 12.00 - 13.00 dilarang (istirahat maksi cuy) dan akses di hari Jumat pada jam 11.00 - 13.00 juga dilarang (maklum, Jumatan rek).
@@ -259,6 +281,8 @@ Lalu, lakukan testing di client (saya run di GrabeForest) dengan mengubah tangga
 ![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/cd8c6bb9-eb58-440e-97d9-9e391b80866b)
 
 Pada hari Senin, 18 Desember 2023 pukul 12.30 muncul filterred
+
+---
 
 ## **Soal Nomor 7**
 Karena terdapat 2 WebServer, kalian diminta agar setiap client yang mengakses Sein dengan Port 80 akan didistribusikan secara bergantian pada Sein dan Stark secara berurutan dan request dari client yang mengakses Stark dengan port 443 akan didistribusikan secara bergantian pada Sein dan Stark secara berurutan.
@@ -291,6 +315,8 @@ Lalu, di client GrabeForest, jalankan
 
 ![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/47ec18f3-e281-4a82-a8b2-9dd087187d11)
 
+---
+
 ## **Soal Nomor 8**
 Karena berbeda koalisi politik, maka subnet dengan masyarakat yang berada pada Revolte dilarang keras mengakses WebServer hingga masa pencoblosan pemilu kepala suku 2024 berakhir. Masa pemilu (hingga pemungutan dan penghitungan suara selesai) kepala suku bersamaan dengan masa pemilu Presiden dan Wakil Presiden Indonesia 2024.
 
@@ -309,6 +335,8 @@ Jika disetting pada masa pemilu
 
 Jika disetting di luar masa pemilu
 ![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/5d643213-5ebe-4ef4-9e1e-63920c05cb2a)
+
+---
 
 ## **Soal Nomor 9**
 Sadar akan adanya potensial saling serang antar kubu politik, maka WebServer harus dapat secara otomatis memblokir  alamat IP yang melakukan scanning port dalam jumlah banyak (maksimal 20 scan port) di dalam selang waktu 10 menit (clue: test dengan nmap).
@@ -333,6 +361,8 @@ Lalu, lakukan setting dengan menjalankan syntax berikut di GrobeForest
 
 ![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/0c046779-d1c3-4ab0-ab66-c20478f24bdd)
 ![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/d79b514f-cc9f-46bf-92db-2e3bcb208610)
+
+---
 
 ## **Soal Nomor 10**
 Karena kepala suku ingin tau paket apa saja yang di-drop, maka di setiap node server dan router ditambahkan logging paket yang di-drop dengan standard syslog level. 
