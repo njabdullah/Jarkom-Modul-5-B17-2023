@@ -72,6 +72,147 @@ Pembagian IP setiap node
 | A10    | Fern      | eth2  | 10.17.14.149  | 255.255.255.252 |             |
 |        | Revolte   | eth0  | 10.17.14.150  |               | 10.17.14.149 |
 
+---
+Configurasi Setiap Node
+Aura
+    
+    auto eth0
+    iface eth0 inet dhcp
+    
+    auto eth1
+    iface eth1 inet static
+    	address 10.17.14.129
+    	netmask 255.255.255.252
+    
+    auto eth2
+    iface eth2 inet static
+    	address 10.17.14.133
+    	netmask 255.255.255.252
+
+Heiter
+
+    auto eth0
+    iface eth0 inet static
+    	address 10.17.14.130
+    	netmask 255.255.255.252
+            	gateway 10.17.14.129
+    
+    auto eth1
+    iface eth1 inet static
+    	address 10.17.0.1
+    	netmask 255.255.248.0
+    
+    auto eth2
+    iface eth2 inet static
+    	address 10.17.8.1
+    	netmask 255.255.252.0
+
+TurkRegion
+
+    auto eth0
+    iface eth0 inet dhcp
+
+GrobeForest
+
+    auto eth0
+    iface eth0 inet dhcp
+
+Sein
+
+    auto eth0
+    iface eth0 inet static
+    	address 10.17.8.2
+    	netmask 255.255.252.0
+    	gateway 10.17.8.1
+
+Frieren
+
+    auto eth0
+    iface eth0 inet static
+    	address 10.17.14.134
+    	netmask 255.255.255.252
+        gateway 10.17.14.133
+
+    auto eth1
+    iface eth1 inet static
+    	address 10.17.14.141
+    	netmask 255.255.255.252
+    
+    auto eth2
+    iface eth2 inet static
+    	address 10.17.14.137
+    	netmask 255.255.255.252
+
+Stark
+
+    auto eth0
+    iface eth0 inet static
+    	address 10.17.14.138
+    	netmask 255.255.255.252
+        gateway 10.17.14.137
+
+Himmel
+
+    auto eth0
+    iface eth0 inet static
+    	address 10.17.14.142
+    	netmask 255.255.255.252
+            gateway 10.17.14.141
+    
+    auto eth1
+    iface eth1 inet static
+    	address 10.17.12.1
+    	netmask 255.255.254.0
+    
+    auto eth2
+    iface eth2 inet static
+    	address 10.17.14.1
+    	netmask 255.255.255.128
+
+Laubhills
+
+    auto eth0
+    iface eth0 inet dhcp
+
+SchewerMountain
+
+    auto eth0
+    iface eth0 inet dhcp
+
+Richter
+
+    auto eth0
+    iface eth0 inet static
+    	address 10.17.14.146
+    	netmask 255.255.255.252
+        gateway 10.17.14.145
+
+Fern
+
+    auto eth0
+    iface eth0 inet static
+    	address 10.17.14.2
+    	netmask 255.255.255.128
+            	gateway 10.17.14.1
+    
+    auto eth1
+    iface eth1 inet static
+    	address 10.17.14.145
+    	netmask 255.255.255.252
+    
+    auto eth2
+    iface eth2 inet static
+        address 10.17.14.149
+    	netmask 255.255.255.252
+
+Revolte
+
+    auto eth0
+    iface eth0 inet static
+    	address 10.17.14.150
+    	netmask 255.255.255.252
+        gateway 10.17.14.149
+
 ## **Soal Nomor 1**
 Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Aura menggunakan iptables, tetapi tidak ingin menggunakan MASQUERADE.
 
