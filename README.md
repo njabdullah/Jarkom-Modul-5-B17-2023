@@ -6,9 +6,43 @@
 | Abdullah Nasih Jasir       | 5025211111 |
 | Yohanes Teguh Ukur Ginting | 5025211179 |
 
-
 ## **Soal Nomor 0**
 Setelah pandai mengatur jalur-jalur khusus, kalian diminta untuk membantu North Area menjaga wilayah mereka dan kalian dengan senang hati membantunya karena ini merupakan tugas terakhir.
+
+Topology beserta subnet
+![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/f72fe981-0e03-45af-983e-40e947c006e2)
+
+Rute dalam penentuan subnetting
+| Nama Subnet         | Rute                                    | Jumlah IP | Netmask |
+|---------------------|-----------------------------------------|------------|---------|
+| A1                  | Aura-Heiter                             | 2          | /30     |
+| A2                  | Heiter-TurkRegion(1022)                 | 1023       | /21     |
+| A3                  | Heiter-Switch1-Sein-Switch1-GrobeForest | 514        | /22     |
+| A4                  | Aura-Frieren                            | 2          | /30     |
+| A5                  | Frieren-Startk                          | 2          | /30     |
+| A6                  | Frieren-Himmel                          | 2          | /30     |
+| A7                  | Himmel-LaubHills                        | 256        | /23     |
+| A8                  | Himmel-Switch2-SchwerMountains-Switch2-Fern | 66    | /25     |
+| A9                  | Fern-Richter                            | 2          | /30     |
+| A10                 | Fern-Switch3-Revolte                    | 2          | /30     |
+| Total               |                                         | 1871       |         |
+
+Perhitungan dengan VLSM
+![image](https://github.com/njabdullah/Jarkom-Modul-5-B17-2023/assets/92930757/9b51cf1f-1fd4-4946-8b1b-29bfa47a3685)
+
+Pembagian NID, Netmask, dan Broadcast
+| Subnet | Network ID | Netmask       | Broadcast    | Netmask |
+|--------|------------|---------------|--------------|---------|
+| A1     | 10.17.14.128 | 255.255.255.252 | 10.17.14.131 | /30     |
+| A2     | 10.17.0.0  | 255.255.248.0 | 10.17.7.255  | /21     |
+| A3     | 10.17.8.0  | 255.255.252.0 | 10.17.11.255 | /22     |
+| A4     | 10.17.14.132 | 255.255.255.252 | 10.17.14.135 | /30     |
+| A5     | 10.17.14.136 | 255.255.255.252 | 10.17.14.139 | /30     |
+| A6     | 10.17.14.140 | 255.255.255.252 | 10.17.14.143 | /30     |
+| A7     | 10.17.12.0 | 255.255.254.0 | 10.17.13.255 | /23     |
+| A8     | 10.17.14.0 | 255.255.255.128 | 10.17.14.127 | /25     |
+| A9     | 10.17.14.144 | 255.255.255.252 | 10.17.14.147 | /30     |
+| A10    | 10.17.14.148 | 255.255.255.252 | 10.17.14.151 | /30     |
 
 ## **Soal Nomor 1**
 Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Aura menggunakan iptables, tetapi tidak ingin menggunakan MASQUERADE.
