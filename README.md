@@ -254,21 +254,46 @@ Himmel
 ## **Soal Nomor 1**
 Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Aura menggunakan iptables, tetapi tidak ingin menggunakan MASQUERADE.
 
+
+
 ## **Penyelesaian Nomor 1**
 
 ---
+Ip untuk aura pada eth0 akan di set static dan akan di berikan command berikut
+```
+iptables -t nat -A POSTROUTING -o eth0 -j SNAT -s 10.17.0.0/20 --to-source 192.168.122.2
+```
 
 ## **Soal Nomor 2**
 Kalian diminta untuk melakukan drop semua TCP dan UDP kecuali port 8080 pada TCP.
 
 ## **Penyelesaian Nomor 2**
+```
+iptables -F
 
+iptables -A INPUT -p icmp -j ACCEPT
+
+iptables -A INPUT -p tcp --dport 8080 -j ACCEPT
+
+iptables -A INPUT -p tcp -j DROP
+
+iptables -A INPUT -p udp -j DROP
+
+```
 ---
 
+
+![Alt text](image.png)
 ## **Soal Nomor 3**
 Kepala Suku North Area meminta kalian untuk membatasi DHCP dan DNS Server hanya dapat dilakukan ping oleh maksimal 3 device secara bersamaan, selebihnya akan di drop.
 
 ## **Penyelesaian Nomor 3**
+
+```
+iptables -A INPUT -m state --state ESTABLISHED,RELATED -j ACCEPT
+iptables -A INPUT -p icmp -m connlimit --connlimit-above 3 --connlimit-mask 0 -j DROP
+
+```
 
 ---
 
@@ -277,13 +302,24 @@ Lakukan pembatasan sehingga koneksi SSH pada Web Server hanya dapat dilakukan ol
 
 ## **Penyelesaian Nomor 4**
 
+```
+iptables -A INPUT -p tcp --dport 22 -s 10.17.8.0/22 -j ACCEPT
+
+iptables -A INPUT -p tcp --dport 22 -j DROP
+
+```
+
 ---
 
 ## **Soal Nomor 5**
 Selain itu, akses menuju WebServer hanya diperbolehkan saat jam kerja yaitu Senin-Jumat pada pukul 08.00-16.00.
 
 ## **Penyelesaian Nomor 5**
+```
+iptables -A INPUT -m time --timestart 08:00 --timestop 16:00 --weekdays Mon,Tue,Wed,Thu,Fri -j ACCEPT
+iptables -A INPUT -j REJECT
 
+```
 ---
 
 ## **Soal Nomor 6**
