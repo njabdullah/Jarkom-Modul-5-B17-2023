@@ -266,13 +266,12 @@ Lalu, karena ternyata terdapat beberapa waktu di mana network administrator dari
 ## **Penyelesaian Nomor 6**
 Di Web Server (Sein dan Stark)
 
-    iptables -A INPUT -p tcp --dport 22 -s 10.17.8.3/22 -m time --timestart 08:00
-    iptables -A INPUT -p tcp --dport 22 -j DROP
-    
-    iptables -A INPUT -p tcp --dport 22 -s 10.17.8.3/22 -m time --timestart 12:00
-    iptables -A INPUT -p tcp --dport 22 -s 10.17.8.3/22 -m time --timestart 11:00
+    iptables -A INPUT -p tcp --dport 80 -m time --timestart 13:01 --timestop 10:59 --weekdays Mon,Tue,Wed,Thu,Fri -j ACCEPT
+    iptables -A INPUT -p tcp --dport 80 -m time --timestart 12:00 --timestop 13:00 --weekdays Mon,Tue,Wed,Thu -j DROP
+    iptables -A INPUT -p tcp --dport 80 -m time --timestart 11:00 --timestop 13:00 --weekdays Fri -j DROP
+    iptables -A INPUT -p tcp --dport 80 -j DROP
 
-Lalu, lakukan testing di client (saya run di GrabeForest) dengan mengubah tanggalnya terlebih dahulu
+Lalu, lakukan testing di client (saya run di TurkRegion) dengan mengubah tanggalnya terlebih dahulu
 
     nmap 10.17.8.2
     nmap 10.17.14.138
@@ -298,7 +297,7 @@ Di Router yang menempel dengan Web Server (Heiter dan Frieren)
     
     iptables -A PREROUTING -t nat -p tcp --dport 443 -d 10.17.14.138 -j DNAT --to-destination 10.17.8.2
 
-lalu, lakukan testing di client (saya run di GrabeForest) deengan meengubah tanggalnya terlebih dahulu
+lalu, lakukan testing di client (saya run di TurkRegion) deengan meengubah tanggalnya terlebih dahulu
 
 Di Sein, jalankan
 
@@ -308,7 +307,7 @@ Di Stark, jalankan
 
     while true; do nc -l -p 80 -c 'echo "ini stark bro"'; done
 
-Lalu, di client GrabeForest, jalankan
+Lalu, di client TurkRegion, jalankan
 
     nc 10.17.8.2 80
     nc 10.17.14.138 80
