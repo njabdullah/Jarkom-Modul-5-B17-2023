@@ -203,7 +203,7 @@ Fern
     iface eth0 inet static
     	address 10.17.14.2
     	netmask 255.255.255.128
-            	gateway 10.17.14.1
+        gateway 10.17.14.1
     
     auto eth1
     iface eth1 inet static
@@ -224,6 +224,32 @@ Revolte
         gateway 10.17.14.149
 
 ---
+
+Routing
+
+Aura
+
+    route add -net 10.17.0.0 netmask 255.255.248.0 gw 10.17.14.130
+    route add -net 10.17.8.0 netmask 255.255.252.0 gw 10.17.14.130
+    route add -net 10.17.14.136 netmask 255.255.255.252 gw 10.17.14.134
+    route add -net 10.17.14.140 netmask 255.255.255.252 gw 10.17.14.134
+    route add -net 10.17.12.0 netmask 255.255.254.0 gw 10.17.14.134
+    route add -net 10.17.14.0 netmask 255.255.255.128 gw 10.17.14.134
+    route add -net 10.17.14.144 netmask 255.255.255.252 gw 10.17.14.134
+    route add -net 10.17.14.148 netmask 255.255.255.252 gw 10.17.14.134
+
+Frieren
+
+    route add -net 10.17.12.0 netmask 255.255.254.0 gw 10.17.14.142
+    route add -net 10.17.14.0 netmask 255.255.255.128 gw 10.17.14.142
+    route add -net 10.17.14.144 netmask 255.255.255.252 gw 10.17.14.142
+    route add -net 10.17.14.148 netmask 255.255.255.252 gw 10.17.14.142
+
+Himmel
+
+    route add -net 0.0.0.0 netmask 0.0.0.0 gw 10.17.14.141
+    route add -net 10.17.14.144 netmask 255.255.255.252 gw 10.17.14.2
+    route add -net 10.17.14.148 netmask 255.255.255.252 gw 10.17.14.2
 
 ## **Soal Nomor 1**
 Agar topologi yang kalian buat dapat mengakses keluar, kalian diminta untuk mengkonfigurasi Aura menggunakan iptables, tetapi tidak ingin menggunakan MASQUERADE.
